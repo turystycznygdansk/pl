@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Turystyczny Gdańsk</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+        .naglowek {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-bottom: 2px solid #d32f2f;
+        }
+        .naglowek img {
+            height: 80px;
+            width: auto;
+            cursor: pointer; /* dodane */
+        }
+        .naglowek .nazwa-strony {
+            margin-left: 20px;
+            flex-grow: 1;
+            font-size: 40px;
+            color: #d32f2f;
+            font-weight: bold;
+            cursor: pointer; /* dodane */
+            text-decoration: none; /* dodane */
+        }
+        .naglowek .pasek-wyszukiwania {
+            margin: 10px 0;
+            padding: 10px;
+            border: 2px solid #d32f2f;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 300px;
+        }
+        .naglowek button {
+            padding: 10px 20px;
+            background-color: #d32f2f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .naglowek button:hover {
+            background-color: #b71c1c;
+        }
+        .przyciski {
+            background-color: #e1e1e1;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            border-bottom: 2px solid #d32f2f;
+        }
+        .przyciski button {
+            padding: 10px 20px;
+            background-color: #d32f2f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            flex-grow: 1;
+            max-width: 200px;
+        }
+        .przyciski button:hover {
+            background-color: #b71c1c;
+        }
+        iframe {
+            width: 100%;
+            height: calc(100vh - 170px);
+            border: none;
+        }
+        @media (max-width: 768px) {
+            .naglowek .nazwa-strony {
+                font-size: 32px;
+                margin-left: 10px;
+            }
+            .naglowek .pasek-wyszukiwania {
+                width: calc(100% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .naglowek .nazwa-strony {
+                font-size: 24px;
+                margin-left: 5px;
+            }
+            .naglowek img {
+                height: 40px;
+            }
+            .naglowek .pasek-wyszukiwania {
+                width: calc(100% - 20px);
+            }
+            .naglowek button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            .przyciski button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+        .language-buttons {
+            display: flex;
+            gap: 10px;
+            margin-left: 10px;
+        }
+        .language-buttons button {
+            padding: 5px 10px;
+            background-color: #d32f2f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .language-buttons button:hover {
+            background-color: #b71c1c;
+        }
+    </style>
+</head>
+<body>
+    <div class="naglowek" onclick="resetujStrone()">
+        <a href="#"><img src="Logo.png" alt="Logo"></a>
+        <a href="#" class="nazwa-strony">Turystyczny Gdańsk</a>
+        <input type="text" class="pasek-wyszukiwania" placeholder="pasek wyszukiwania" id="searchInput">
+        <button onclick="searchFunction()">Szukaj</button>
+        <div class="language-buttons">
+            <button onclick="zmienJezyk('pl')">PL</button>
+            <button onclick="zmienJezyk('en')">EN</button>
+            <button onclick="zmienJezyk('de')">DE</button>
+        </div>
+    </div>
+    <div class="przyciski">
+        <button onclick="otworzPodstrone('Wiadomosci.html')">Wiadomości</button>
+        <button onclick="otworzPodstrone('Transport.html')">Komunikacja</button>
+        <button onclick="otworzPodstrone('podstrona3.html')">Dla Turystów</button>
+        <button onclick="otworzPodstrone('omiescie.html')">O mieście</button>
+    </div>
+    <iframe id="ramkaZawartosci" src=""></iframe>
+
+    <script>
+        const pages = {
+            pl: [
+                { title: "Wiadomości", url: "Wiadomosci.html", tags: ["wiadomości", "informacje"] },
+                { title: "O nas", url: "o_nas.html", tags: ["o nas"] },
+                { title: "Usługi", url: "uslugi.html", tags: ["usługi", "artykuł"] },
+                { title: "Kontakt", url: "kontakt.html", tags: ["kontakt", "info"] }
+            ],
+            en: [
+                { title: "News", url: "News.html", tags: ["news", "information"] },
+                { title: "About Us", url: "about.html", tags: ["about"] },
+                { title: "Services", url: "services.html", tags: ["services", "article"] },
+                { title: "Contact Us", url: "contact.html", tags: ["contact", "info"] }
+            ],
+            de: [
+                { title: "Nachrichten", url: "Nachrichten.html", tags: ["nachrichten", "information"] },
+                { title: "Über uns", url: "uber_uns.html", tags: ["über uns"] },
+                { title: "Dienstleistungen", url: "dienstleistungen.html", tags: ["dienstleistungen", "artikel"] },
+                { title: "Kontakt", url: "kontakt.html", tags: ["kontakt", "info"] }
+            ]
+        };
+
+        let currentLang = 'pl';
+
+        function searchFunction() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+
+            for (const page of pages[currentLang]) {
+                if (page.title.toLowerCase().includes(input) || page.tags.some(tag => tag.includes(input))) {
+                    document.getElementById('ramkaZawartosci').src = page.url;
+                    return; // Przerwij pętlę, gdy znajdziesz pasującą stronę
+                }
+            }
+        }
+
+        // Przenieś użytkownika do wyniku po naciśnięciu Enter
+        document.getElementById("searchInput").addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                searchFunction();
+            }
+        });
+
+        function resetujStrone() {
+            document.getElementById('searchInput').value = ''; // Wyczyszczenie pola wyszukiwania
+            document.getElementById('ramkaZawartosci').src = ''; // Resetowanie zawartości iframe
+        }
+
+        function otworzPodstrone(url) {
+            document.getElementById('ramkaZawartosci').src = url;
+        }
+
+        function zmienJezyk(lang) {
+            currentLang = lang;
+            const langMap = {
+                pl: {
+                    placeholder: "pasek wyszukiwania",
+                    searchButton: "Szukaj",
+                    buttons: ["Wiadomości", "Komunikacja", "Dla Turystów", "O mieście"]
+                },
+                en: {
+                    placeholder: "search bar",
+                    searchButton: "Search",
+                    buttons: ["News", "Transport", "For Tourists", "About the City"]
+                },
+                de: {
+                    placeholder: "Suchleiste",
+                    searchButton: "Suchen",
+                    buttons: ["Nachrichten", "Verkehr", "Für Touristen", "Über die Stadt"]
+                }
+            };
+
+            document.getElementById('searchInput').placeholder = langMap[lang].placeholder;
+            document.querySelector('.naglowek button').textContent = langMap[lang].searchButton;
+            const buttons = document.querySelectorAll('.przyciski button');
+            langMap[lang].buttons.forEach((text, index) => {
+                buttons[index].textContent = text;
+            });
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

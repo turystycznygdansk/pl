@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tytuł podstrony</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #fff;
+            color: #333;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .powrot {
+            display: block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #d32f2f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .powrot:hover {
+            background-color: #b71c1c;
+        }
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        .language-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .language-buttons button {
+            padding: 5px 10px;
+            background-color: #d32f2f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .language-buttons button:hover {
+            background-color: #b71c1c;
+        }
+		 .highlight-dot::before {
+            content: '•';
+            color: black;
+            font-size: 2em;
+            vertical-align: middle;
+            margin-right: 0.2em;
+        }
+		
+		
+    </style>
+</head>
+<body>
+    <div class="language-buttons">
+        <button onclick="zmienJezyk('pl')">PL</button>
+        <button onclick="zmienJezyk('en')">EN</button>
+        <button onclick="zmienJezyk('de')">DE</button>
+    </div>
+    
+    <div class="content">
+        <h1 id="tytul">Tytuł pełnej wiadomości</h1>
+        <div class="image-container">
+          
+        </div>
+        <p id="tresc">Samolot powstanie na rondzie</p>
+    </div>
+
+    <script>
+        const tresci = {
+            pl: {
+                tytul: "Jak dojechać z Gdańskiego lotniska?",
+                tresc: "Jeśli przyleciałeś do Gdańska, logiczne że chcesz dostać się do centrum. Możesz to zrobić na kilka sposobów. Dla ułatwienia przedstawiona będzie trasa z portu lotniczego do stacji kolejowej <strong>Gdańsk Wrzeszcz</strong>. <br> <br>		<span class='highlight-dot'> Najszybszym i tanim środkiem transportu jest pociąg. Z lotniska odjeżdżą pociągi <strong>Polregio</strong>,ważne jest wsiąść w dobry pociąg bo z lotniska możemy pojechać do Gdyni lub innych miast. Zakładam że chcecie dostać się do Gdańska, jeśli tak jest to wchodzicie na pierwszy peron od wejścia i szukacie na wyświetlaczu napisu <strong>Gdańsk Wrzeszcz</strong>. Jak już znajdziesz wyświetlacz możesz być spokojnym bo wyswietla się na nim stacja końcowa lini i czas za jaki przyjedzie pociąg. Obok wejścia na peron znajduje się biletomat w którym kupisz bilet. W maszynie możesz wybrać język angielski i niemiecki co ułatwi zakup biletu turystom z zagranicy. W biletomacie musisz wybrać stacje docelową oraz godzine odjazdu pociągu. Następnie płacisz kartą lub gotówką i zabierasz bilet ze sobą. (Polecam płacić kartą za bilet ,ponieważ czasami biletomat odrzuca gotówkę.) Oczywiście jeśli nie chcesz kupić biletu w automacie mozesz zrobić to na <a href='https://polregio.pl/pl/'>stronie internetowej Polreio</a>. Bilet kosztuje 5.50zł (04.06.2024) a jedzie się przez niecałe półgodziny.</span><br><br> <img src='pkm.jpg' width='800' height='500'> <br> <span class='highlight-dot'>Drugą opcją jest autobus. Aby dostać się na przystanek autobusowy podążaj za niebieską linią. Nastepnie musisz kupić bilet w czerwonym biletomacie. Tak samo jak na peronie biletomaty mają język angielski i niemiecki. Kupując bilet zwróć uwagę na rodzaj biletu, najlepszym wyborem jest jednorazowy za 4.80zł (04.06.2024) lub bilet na 75 minut za 6.00zł jeśli się chcesz przesiadać. Bilety można kupić równiez w aplikacji bankowej lub w kasownikach systemu fala (wewnątrz pojazdu) do którego wystarczy przyłożyć karte płatniczą. Pamiętaj ,że kierowcy autobusów i tramwaji nie sprzedają biletów. Z portu lotniczego do Gdańska Wrzeszcza odjeżdż linia 110 którą jedzie się około 35 minut.</span><br><br> <img src='rozklad.png' width='500' height='500'> <br> <span class='highlight-dot'>Ostatnią opcją jest taksówka lub uber. Aby się do nich dostac musisz podążać za żółtą linią. Taksówka będzie najdroższą opcją ze wszystkich.</span> <br><br><br><br> Źródła: https://www.pkm-sa.pl/przystanki/static/media/pkm-strz1.1121238d <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp https://ztm.gda.pl <br><iframe width='560' height='315' src='https://www.youtube.com/embed/-CYqs-sM94Q?si=jlXabKiLfm_2LWLc' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
+                zdjecieAlt: "Opis zdjęcia"
+            },
+            en: {
+                tytul: "How to get from Gdańsk airport?",
+                tresc: "If you have flown to Gdańsk, it is logical that you want to get to the center. You can do this in several ways. For your convenience, the route from the airport to the <strong>Gdańsk Wrzeszcz</strong> railway station will be presented. <br> <br> <span class='highlight-dot'> The fastest and cheapest means of transport is the train. <strong>Polregio</strong> trains leave from the airport, it is important to take a good train because from the airport we can go to Gdynia or other cities. I assume that you want to get to Gdańsk, if so, enter the first platform from the entrance and look for the word <strong>Gdańsk Wrzeszcz</strong> on the display. Once you find the display, you can rest assured because it shows the end station of the line and the time in which the train will arrive. There is a ticket machine next to the entrance to the platform where you can buy your ticket. In the machine you can choose English and German, which will make it easier for tourists from abroad to purchase a ticket. At the ticket machine, you must select the destination station and the train departure time. Then you pay by card or cash and take your ticket with you. (I recommend paying for the ticket by card, because sometimes the ticket machine rejects cash.) Of course, if you do not want to buy a ticket from a machine, you can do it at <a href='https://polregio.pl/pl/'>Polregio website</a> . The ticket costs PLN 5.50 (04/06/2024) and the journey takes less than half an hour. </span><br><br> <img src='pkm.jpg' width='800' height='500'> <br> <span class='highlight-dot'>The second option is the bus. To get to the bus stop, follow the blue line. Then you need to buy a ticket at the red ticket machine. Just like on the platform, ticket machines are available in English and German. When buying a ticket, pay attention to the type of ticket, the best choice is a single ticket for PLN 4.80 (04/06/2024) or a 75-minute ticket for PLN 6.00 if you want to transfer. Tickets can also be purchased in the banking application or in fala system validators (inside the vehicle) to which you just need to place your payment card. Remember that bus and tram drivers do not sell tickets. From the airport to Gdańsk Wrzeszcz, take line 110 which takes about 35 minutes.</span><br><br> <img src='rozklad.png' width='500' height='500'> <br> <span class='highlight-dot'>The last option is a taxi or uber. To get to them you need to follow the yellow line. A taxi will be the most expensive option of all.</span> <br><br><br><br> Sources: https://www.pkm-sa.pl/przystanki/static/media/pkm-strz1.1121238d <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp https://ztm.gda.pl",
+                zdjecieAlt: "Description of the photo"
+            },
+            de: {
+                tytul: "Wie kommt man vom Flughafen Danzig?",
+                tresc: "Wenn Sie nach Danzig geflogen sind, ist es logisch, dass Sie ins Zentrum wollen. Sie können dies auf verschiedene Arten tun. Zur Vereinfachung wird Ihnen die Route vom Flughafen zum Bahnhof <strong>Gdańsk Wrzeszcz</strong> vorgestellt. <br> <br> <span class='highlight-dot'> Das schnellste und günstigste Transportmittel ist der Zug. <strong>Polregio</strong>-Züge fahren vom Flughafen ab. Es ist wichtig, einen guten Zug zu nehmen, denn vom Flughafen aus können wir nach Gdynia oder in andere Städte fahren. Ich gehe davon aus, dass Sie nach Danzig wollen. Wenn ja, betreten Sie vom Eingang aus den ersten Bahnsteig und suchen Sie nach dem Wort <strong>Gdańsk Wrzeszcz</strong> auf dem Display. Sobald Sie die Anzeige gefunden haben, können Sie beruhigt sein, denn sie zeigt den Endbahnhof der Linie und die Ankunftszeit des Zuges an. Neben dem Eingang zum Bahnsteig befindet sich ein Fahrkartenautomat, an dem Sie Ihre Fahrkarte kaufen können. Am Automaten können Sie zwischen Englisch und Deutsch wählen, was Touristen aus dem Ausland den Ticketkauf erleichtert. Am Fahrkartenautomaten müssen Sie den Zielbahnhof und die Abfahrtszeit des Zuges auswählen. Anschließend zahlen Sie mit Karte oder Bargeld und nehmen Ihr Ticket mit. (Ich empfehle, das Ticket mit Karte zu bezahlen, da der Fahrkartenautomat manchmal Bargeld ablehnt.) Wenn Sie kein Ticket an einem Automaten kaufen möchten, können Sie dies natürlich unter <a href='https://polregio tun .pl/pl/'>Polregio-Website</a> . Das Ticket kostet 5,50 PLN (04.06.2024) und die Fahrt dauert weniger als eine halbe Stunde.</span><br><br> <img src='pkm.jpg' width='800' height='500'> <br> <span class='highlight-dot'>Die zweite Option ist der Bus. Um zur Bushaltestelle zu gelangen, folgen Sie der blauen Linie. Dann müssen Sie am roten Fahrkartenautomaten ein Ticket kaufen. Die Fahrkartenautomaten sind wie auf dem Bahnsteig in Englisch und Deutsch verfügbar. Achten Sie beim Kauf einer Fahrkarte auf die Art der Fahrkarte, die beste Wahl ist eine Einzelfahrkarte für 4,80 PLN (04.06.2024) oder eine 75-Minuten-Fahrkarte für 6,00 PLN, wenn Sie umsteigen möchten. Tickets können auch in der Banking-Anwendung oder an Entwertern des Fala-Systems (im Fahrzeug) gekauft werden, an denen Sie lediglich Ihre Zahlungskarte vorlegen müssen. Denken Sie daran, dass Bus- und Straßenbahnfahrer keine Fahrkarten verkaufen. Vom Flughafen nach Danzig Wrzeszcz nehmen Sie die Linie 110, die etwa 35 Minuten dauert.</span><br><br> <img src='rozklad.png' width='500' height='500'> <br> <span class='highlight-dot'>Die letzte Option ist ein Taxi oder Uber. Um zu ihnen zu gelangen, müssen Sie der gelben Linie folgen. Ein Taxi wird die teuerste Option von allen sein.</span> <br><br><br><br> Quellen: https://www.pkm-sa.pl/przystanki/static/media/pkm-strz1 .1121238d <br >&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp https://ztm.gda.pl",
+                zdjecieAlt: "Beschreibung des Fotos"
+            }
+        };
+
+        function zmienJezyk(lang) {
+            localStorage.setItem('lang', lang);
+            ustawJezyk(lang);
+        }
+
+        function ustawJezyk(lang) {
+            const data = tresci[lang];
+            document.getElementById('tytul').textContent = data.tytul;
+            document.getElementById('tresc').innerHTML = data.tresc; // użycie innerHTML do interpretacji znacznika <strong>
+            document.getElementById('zdjecie').alt = data.zdjecieAlt;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const lang = localStorage.getItem('lang') || 'pl';
+            ustawJezyk(lang);
+        });
+    </script>
+</body>
+</html>
+
+
