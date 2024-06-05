@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tytuł podstrony</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #fff;
+            color: #333;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .powrot {
+            display: block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #d32f2f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .powrot:hover {
+            background-color: #b71c1c;
+        }
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        .language-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .language-buttons button {
+            padding: 5px 10px;
+            background-color: #d32f2f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .language-buttons button:hover {
+            background-color: #b71c1c;
+        }
+		 .highlight-dot::before {
+            content: '•';
+            color: black;
+            font-size: 2em;
+            vertical-align: middle;
+            margin-right: 0.2em;
+        }
+		
+		
+    </style>
+</head>
+<body>
+    <div class="language-buttons">
+        <button onclick="zmienJezyk('pl')">PL</button>
+        <button onclick="zmienJezyk('en')">EN</button>
+        <button onclick="zmienJezyk('de')">DE</button>
+    </div>
+    
+    <div class="content">
+        <h1 id="tytul">Tytuł pełnej wiadomości</h1>
+        <div class="image-container">
+          
+        </div>
+        <p id="tresc">Samolot powstanie na rondzie</p>
+    </div>
+
+    <script>
+        const tresci = {
+            pl: {
+                tytul: "Gdzie można zjeść coś dobrego w Gdańsku?",
+                tresc: "W Gdańsku znajdziemy pełno restauracji, lodziarni i innych lokali gastronomicznych. Od tych najbardziej popularnych na ulicy długiej i długi targ po to które znajdują się w mniej znanych lokalizacjach. W tym artykule przedstawie moim zdaniem najlepsze lokale gastronomiczne nie tylko w głównym mieście. <br><br> <span class='highlight-dot'> Pierwszym miejscem jest <strong><a href='https://www.google.pl/maps/place/Lodziarnia+Znane+Smaki/@54.3539926,18.6533605,17z/data=!3m1!4b1!4m6!3m5!1s0x46fd7374d44fee07:0xc836f77591f12394!8m2!3d54.3539895!4d18.6559408!16s%2Fg%2F11c0w3sbvs?entry=ttu'>Lodziarnia Znane Smaki</a></strong>. Jest to niewielka lodziarnia znajdująca się w samym sercu miasta. Znajduje się ona 11 minut drogi z pod ratusza a idąc można zobaczyć jak wygląda miasto z perspektywy bocznych uliczek. W lodziarni możemy wybrać sobie kilka smaków. Moim ulubionym i godnym polecenia smakiem jest deser angielski. Obsługa lodziarni jest bardzo miła i pomocna. Lody są naturalne i w przystepnej cenie. Warto jeszcze dodać że za lody można zapłacić zarówno gotówką jak i kartą. Polecam odwiedzić tą lodziarnie i przekonać się na własną ręke. <br><br><img src='lody.jpg' width='100%' height='50%'></span><br><br> <span class='highlight-dot'>Druga będzie <strong><a href='https://www.google.com/maps/place/Restauracja+Kos+na+Piwnej/@54.3506664,18.6495788,18.75z/data=!4m10!1m2!2m1!1skos!3m6!1s0x46fd739fb9ecb7b7:0x5cc6a496d49bfebc!8m2!3d54.3501464!4d18.6503766!15sCgNrb3NaBSIDa29zkgEKcmVzdGF1cmFudJoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VSNGJreFlhVkpCRUFF4AEA!16s%2Fg%2F1v5_839t?entry=ttu'>Restauracja Kos na ulicy Piwnej</a></strong>. Jest to klimatyczna restauracja znajdująca sie obok ulicy długiej. Jedzenie jest tam bardzo pyszne a lokal nowoczesny. Restauracja posiada drugie piętro oraz przed wejściem mini ogródek w którym można zjeść zamówione jedzenie w ciepłe wieczory. Lokal oferuje duży wybór dań oraz kilka deserów. Oczywiście można też zamówić alkohol. W restauracji można płacic kartą jak i gotówką. Ważne jest aby zarezerwować stolik z wyprzedzeniem. Można to zrobić na przykład telefonicznie lub za pomocą ich strony internetowej. <br><br> <img src='rest1.jpg' width='100%' height='50%'></span><br><br> <span class='highlight-dot'>Trzecim miejscem wartym polecenia jest <strong><a href='https://www.google.com/maps/place/Chleb+i+Wino+Chmielna+Gdańsk+Restauracja/@54.3492178,18.6588295,18.75z/data=!4m6!3m5!1s0x46fd73766ee703b9:0xd4fbf59cbabb44db!8m2!3d54.349501!4d18.6579025!16s%2Fg%2F11ngzls9yv?entry=ttu'>Restauracja Chleb i Wino</a></strong>. Jest to restauracja z przepięknym widokiem na Gdańsk. Widok z drugiego piętra jest niesamowity szczególnie wieczorem gdy jest już ciemno. Z piętra jest idealny widok na motławę i pięknie oświetlony żuraw który robi niesamowite wrażenie. Ale widoki to nie wszystko, bo najważniejsze jest jedzenie. A jedzenie dostaniemy tam bardzo smaczne. Do wyboru mamy dużą ilość dań. W przypadku tej restauracji trzeba zarezerwować stolik minimum jeden dzień w cześniej bo do tego lokalu kolejki są długie. <br><br> <img src='rest2.jpg' width='100%' height='50%'></span><br><br> <span class='highlight-dot'>Dla odmiany teraz zaprezenuje drugą lodzianie. Jest nią <strong><a href='https://www.google.com/maps/place/Lody+Tradycyjne+Kwaśniak+1954/@54.3814337,18.613444,17z/data=!3m1!4b1!4m6!3m5!1s0x46fd74bde201ec2b:0x8cd57b33adb061eb!8m2!3d54.3814337!4d18.613444!16s%2Fg%2F11c1r1x2f6?hl=pl&entry=ttu'>Lodziarnia Kwaśniak</a></strong>. Jest to lodziarnia znajdująca się w dzielnicy Wrzeszcz Dolny. Można w łatwy sposób do niej dojechać tramwajem lini nr. 2 i 8. Wystarczy wsiąść do tramwaju i wysiąść na przystanku Plac Komorowskiego. Wtedy dzieli nas tylko parę minut od pysznych lodów. Lody są naturalne i pyszne, a najlepszymi smakami według mnie są lody waniliowe i kakaowe. Jeśli chcecie chwilę odpocząć to możecie bo w lodziarni znajduje się kilka stolików. A jeśli lody wam nie wystarczą to w lokalu dostaniecie kawę i ciastko. <br><br> <img src='lod.jpg' width='100%' height='50%'></span><br><br> <span class='highlight-dot'>Ostatnim już miejscem jest <strong><a href=''>Restauracja Swojski Smak</a></strong>. Restauracja jest w dobrej lokalizacji bo wystarczy 7 minut od dworca głównego by smacznie zjeść. Menu w lokalu zawiera sporo dań z czego ja polecam najbardziej kawałki kurczaka. Sam lokal jest klimatyczny i ładny. W odróżnieniu od poprzednich restauracji w tej nie powinno być problemu zjeść bez rezerwacji stolika. Polecam zjeść obiad w tej restauracji, jedzenie jest świerze, dobre i nie drogie. <br><br> <img src='rest3.jpg' width='100%' height='50%'></span> <br><br><br><br> Źródła: https://www.google.com/url?sa=i&url=https%3A%2F%2Fchlebiwino.eu%2Fchmielna-gdansk-restauracja%2F&psig=AOvVaw3aVEe-C_Hhx3ocPJpKwhfK&ust=1717700122053000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMiwl8qRxYYDFQAAAAAdAAAAABAE <br><br> https://www.google.com/url?sa=i&url=https%3A%2F%2Fobywatelpolski.com%2Flodziarnia%2Fgdansk%2Flody-tradycyjne-kwasniak-1954%2F&psig=AOvVaw3e8xPSqBND6qWTsYbGaFHQ&ust=1717700836344000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKDJh6CUxYYDFQAAAAAdAAAAABBD <br> <br> https://www.google.com/url?sa=i&url=https%3A%2F%2Fobywatelpolski.com%2Flodziarnia%2Fgdansk%2Flodziarnia-znane-smaki%2F&psig=AOvVaw0RTxjAd340g4qlVLls7Yzd&ust=1717701190090000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIiYk8mVxYYDFQAAAAAdAAAAABAI <br><br> https://www.google.com/url?sa=i&url=https%3A%2F%2Frestauracjakos.pl%2Frestauracja-kos%2F&psig=AOvVaw39t-XXRKHcEGeeEMPAFn7v&ust=1717701236170000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNDkgOCVxYYDFQAAAAAdAAAAABAE <br><br> https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tripadvisor.com.sg%2FLocationPhotoDirectLink-g274725-d2170149-i123652949-Restauracja_Swojski_Smak-Gdansk_Pomerania_Province_Northern_Poland.html&psig=AOvVaw2oiUYbSK2e93MAb5T4eTwm&ust=1717701315559000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKCt84eWxYYDFQAAAAAdAAAAABAJ", 
+                zdjecieAlt: "Opis zdjęcia"
+            },
+            en: {
+                tytul: "Where can you eat something good in Gdańsk?",
+                tresc: "In Gdańsk you will find plenty of restaurants, ice cream parlors and other catering establishments. From the most popular ones on Długa Street and Długa Targ to those located in less known locations. In this article I will present, in my opinion, the best restaurants not only in the main city. <br><br> <span class='highlight-dot'> The first place is <strong><a href='https://www.google.pl/maps/place/Lodziarnia+Znane+Smaki/@54.3539926,18.6533605,17z/data= !3m1!4b1!4m6!3m5!1s0x46fd7374d44fee07:0xc836f77591f12394!8m2!3d54.3539895!4d18.6559408!16s%2Fg%2F11c0w3sbvs?entry=ttu'>Lodziarnia Znane Smaki</a></strong>. This is a small ice cream parlor located in the heart of the city. It is located 11 minutes away from the town hall and while walking you can see what the city looks like from the perspective of the side streets. We can choose several flavors in the ice cream parlor. My favorite and recommendable flavor is the English dessert. The ice cream shop staff is very nice and helpful. The ice cream is natural and affordable. It is worth adding that you can pay for ice cream both in cash and by card. I recommend visiting this ice cream parlor and seeing it for yourself. <br><br><img src='lody.jpg' width='100%' height='50%'></span><br><br> <span class='highlight-dot'>The second one will be <strong><a href='https://www.google.com/maps/place/Restauracja+Kos+na+Piwnej/@54.3506664,18.6495788,18.75z/ data=!4m10!1m2!2m1!1skew!3m6!1s0x46fd739fb9ecb7b7:0x5cc6a496d49bfebc!8m2!3d54.3501464!4d18.6503766!15sCgNrb3NaBSIDa29zkgEKcmVzdGF1cmFudJoBI0NoWk RTVWhOTUc5blMwVkpRMEZuU1VSNGJreFlhVkpCRUFF4AEA!16s%2Fg%2F1v5_839t?entry=ttu'>Kos Restaurant on Piwna Street</a></strong>. This is an atmospheric restaurant located next to Długa Street. The food there is very delicious and the place is modern. The restaurant has a second floor and a mini garden in front of the entrance where you can eat your food on warm evenings. The place offers a large selection of dishes and several desserts. Of course, you can also order alcohol. In the restaurant you can pay by card or cash. It is important to reserve a table in advance. This can be done, for example, by phone or via their website. <br><br> <img src='rest1.jpg' width='100%' height='50%'></span><br><br> <span class='highlight-dot'>The third place worth recommending is <strong><a href='https://www.google.com/maps/place/Chleb+i+Wino+Chmielna+Gdańsk+Restauracja/@ 54.3492178,18.6588295,18.75z/data=!4m6!3m5!1s0x46fd73766ee703b9:0xd4fbf59cbabb44db!8m2!3d54.349501!4d18.6579025!16s%2Fg%2F11ngzls9 yv?entry=ttu'>Chleb i Wino Restaurant</a></strong >. This is a restaurant with a beautiful view of Gdańsk. The view from the second floor is amazing, especially in the evening when it is dark. From the first floor there is a perfect view of the Motława River and a beautifully lit crane that makes an amazing impression. But views are not everything, because the most important thing is the food. And the food there is very tasty. We have a large number of dishes to choose from. In the case of this restaurant, you need to book a table at least one day in advance because the queues are long. <br><br> <img src='rest2.jpg' width='100%' height='50%'></span><br><br> <span class='highlight-dot'>For a change, now I will present the second ice cream. It is <strong><a href='https://www.google.com/maps/place/Lody+Tradycyjne+Kwaśniak+1954/@54.3814337,18.613444,17z/data=!3m1!4b1!4m6!3m5! 1s0x46fd74bde201ec2b:0x8cd57b33adb061eb!8m2!3d54.3814337!4d18.613444!16s%2Fg%2F11c1r1x2f6?hl=pl&entry=ttu'>Lodziarnia Kwaśniak</a></strong>. This is an ice cream parlor located in the Wrzeszcz Dolny district. You can easily reach it by tram no. 2 and 8. Just get on the tram and get off at the Plac Komorowskiego stop. Then we are only a few minutes away from delicious ice cream. The ice cream is natural and delicious, and the best flavors in my opinion are vanilla and cocoa ice cream. If you want to rest for a while, you can because there are several tables in the ice cream parlor. And if ice cream isn't enough for you, you can get coffee and cake here. <br><br> <img src='lod.jpg' width='100%' height='50%'></span><br><br> <span class='highlight-dot'>The last one the place is <strong><a href=''>Restauracja Swojski Smak</a></strong>. The restaurant is in a good location - 7 minutes from the main station is enough to eat tasty food. The menu includes a lot of dishes, of which I recommend chicken pieces. The place itself is atmospheric and nice. Unlike previous restaurants, it shouldn't be a problem to eat here without booking a table. I recommend eating dinner in this restaurant, the food is fresh, good and not expensive. <br><br> <img src='rest3.jpg' width='100%' height='50%'></span> <br><br><br><br> Sources: https://www.google.com/url?sa=i&url=https%3A%2F%2Fchlebiwino.eu%2Fchmielna-gdansk-restauracja%2F&psig=AOvVaw3aVEe-C_Hhx3ocPJpKwhfK&ust=1717700122053000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMiwl8qRxYYDFQAAAAAdAAAAABAE <br><br> https://www.google.com/url?sa=i&url=https%3A%2F%2Fobywatelpolski.com%2Flodziarnia%2Fgdansk%2Flody-tradycyjne-kwasniak-1954%2F&psig=AOvVaw3e8xPSqBND6qWTsYbGaFHQ&ust=1717700836344000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKDJh6CUxYYDFQAAAAAdAAAAABBD <br> <br> https://www.google.com/url?sa=i&url=https%3A%2F%2Fobywatelpolski.com%2Flodziarnia%2Fgdansk%2Flodziarnia-znane-smaki%2F&psig=AOvVaw0RTxjAd340g4qlVLls7Yzd&ust=1717701190090000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIiYk8mVxYYDFQAAAAAdAAAAABAI <br><br> https://www.google.com/url?sa=i&url=https%3A%2F%2Frestauracjakos.pl%2Frestauracja-kos%2F&psig=AOvVaw39t-XXRKHcEGeeEMPAFn7v&ust=1717701236170000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNDkgOCVxYYDFQAAAAAdAAAAABAE <br><br> https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tripadvisor.com.sg%2FLocationPhotoDirectLink-g274725-d2170149-i123652949-Restauracja_Swojski_Smak-Gdansk_Pomerania_Province_Northern_Poland.html&psig=AOvVaw2oiUYbSK2e93MAb5T4eTwm&ust=1717701315559000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKCt84eWxYYDFQAAAAAdAAAAABAJ",
+                zdjecieAlt: "Description of the photo"
+            },
+            de: {
+                tytul: "Wo kann man in Danzig etwas Gutes essen?",
+                tresc: "In Danzig finden Sie zahlreiche Restaurants, Eisdielen und andere Gastronomiebetriebe. Von den beliebtesten in der Długa-Straße und Długa Targ bis hin zu denen an weniger bekannten Orten. In diesem Artikel stelle ich meiner Meinung nach die besten Restaurants nicht nur in der Hauptstadt vor. <br><br> <span class='highlight-dot'> Der erste Ort ist <strong><a href='https://www.google.pl/maps/place/Lodziarnia+Znane+Smaki/@54.3539926,18.6533605,17z/data = !3m1!4b1!4m6!3m5!1s0x46fd7374d44fee07:0xc836f77591f12394!8m2!3d54.3539895!4d18.6559408!16s%2Fg%2F11c0w3sbvs?entry=ttu'>Lodziarnia Znane Smaki</a></strong>. Dies ist eine kleine Eisdiele im Herzen der Stadt. Es liegt 11 Minuten vom Rathaus entfernt und bei einem Spaziergang kann man sehen, wie die Stadt aus der Perspektive der Seitenstraßen aussieht. In der Eisdiele können wir aus mehreren Geschmacksrichtungen wählen. Mein liebster und empfehlenswerter Geschmack ist das englische Dessert. Das Personal der Eisdiele ist sehr nett und hilfsbereit. Das Eis ist natürlich und erschwinglich. Es ist erwähnenswert, dass Sie Eis sowohl in bar als auch mit Karte bezahlen können. Ich empfehle, diese Eisdiele zu besuchen und sich selbst davon zu überzeugen. <br><br><img src='lody.jpg' width='100%' height='50%'></span><br><br> <span class='highlight-dot'>Die zweite einer wird <strong><a href='https://www.google.com/maps/place/Restauracja+Kos+na+Piwnej/@54.3506664,18.6495788,18.75z/data=!4m10!1m2!2m1! 1skos!3m6! MEZuU1VSNG JreFlhVkpCRUFF4AEA!16s%2Fg%2F1v5_839t?entry=ttu'>Kos Restaurant in der Piwna Street</a></strong>. Dies ist ein stimmungsvolles Restaurant neben der Długa-Straße. Das Essen dort ist sehr lecker und der Ort ist modern. Das Restaurant verfügt über eine zweite Etage und einen Minigarten vor dem Eingang, wo Sie an warmen Abenden Ihr Essen genießen können. Der Ort bietet eine große Auswahl an Gerichten und mehreren Desserts. Natürlich können Sie auch Alkohol bestellen. Im Restaurant können Sie mit Karte oder Bargeld bezahlen. Es ist wichtig, einen Tisch im Voraus zu reservieren. Dies kann beispielsweise telefonisch oder über deren Website erfolgen. <br><br> <img src='rest1.jpg' width='100%' height='50%'></span><br><br> <span class='highlight-dot'>Der dritte empfehlenswerte Ort ist <strong><a href='https://www.google.com/maps/place/Chleb+i+Wino+Chmielna+Gdańsk+Restauracja/ @ 54.3492178,18.6588295,18.75z/data=!4m6!3m5!1s0x46fd73766ee703b9:0xd4fbf59cbabb44db!8m2!3d54.349501!4d18.6579025!16s%2Fg%2F11ng zls9 yv?entry=ttu'>Chleb i Wino Restaurant</a></strong >. Dies ist ein Restaurant mit einer wunderschönen Aussicht auf Danzig. Die Aussicht aus der zweiten Etage ist atemberaubend, besonders abends, wenn es dunkel ist. Vom ersten Stock aus hat man einen perfekten Blick auf den Fluss Mottlau und einen wunderschön beleuchteten Kran, der einen atemberaubenden Eindruck hinterlässt. Aber Aussicht ist nicht alles, denn das Wichtigste ist das Essen. Und das Essen dort ist sehr lecker. Wir haben eine große Auswahl an Gerichten. In diesem Restaurant muss man wegen der langen Warteschlangen mindestens einen Tag im Voraus einen Tisch reservieren. <br><br> <img src='rest2.jpg' width='100%' height='50%'></span><br><br> <span class='highlight-dot'>Für a Jetzt werde ich mein zweites Eisspiel vorstellen. Es ist <strong><a href='https://www.google.com/maps/place/Lody+Tradycyjne+Kwaśniak+1954/@54.3814337,18.613444,17z/data=!3m1!4b1!4m6!3m5! 1s0x46fd74bde201ec2b:0x8cd57b33adb061eb!8m2!3d54.3814337!4d18.613444!16s%2Fg%2F11c1r1x2f6?hl=pl&entry=ttu'>Lodziarnia Kwaśniak</a></strong>. Dies ist eine Eisdiele im Stadtteil Wrzeszcz Dolny. Sie können es bequem mit der Straßenbahn Nr. erreichen. 2 und 8. Steigen Sie einfach in die Straßenbahn und steigen Sie an der Haltestelle Plac Komorowskiego aus. Dann sind wir nur noch wenige Minuten von leckerem Eis entfernt. Das Eis ist natürlich und köstlich, und die besten Geschmacksrichtungen sind meiner Meinung nach Vanille- und Kakaoeis. Wenn Sie sich eine Weile ausruhen möchten, können Sie dies tun, da es in der Eisdiele mehrere Tische gibt. Und wem das Eis nicht reicht, der bekommt hier Kaffee und Kuchen. <br><br> <img src='lod.jpg' width='100%' height='50%'></span><br><br> <span class='highlight-dot'>Der letzte Einer davon ist <strong><a href=''>Restauracja Swojski Smak</a></strong>. Das Restaurant hat eine gute Lage – 7 Minuten vom Hauptbahnhof reichen aus, um lecker zu essen. Die Speisekarte umfasst viele Gerichte, von denen ich Hühnchenstücke empfehle. Der Ort selbst ist stimmungsvoll und schön. Im Gegensatz zu früheren Restaurants sollte es hier kein Problem sein, ohne Tischreservierung zu essen. Ich empfehle, in diesem Restaurant zu Abend zu essen. Das Essen ist frisch, gut und nicht teuer. <br><br> <img src='rest3.jpg' width='100%' height='50%'></span> <br><br><br><br> Quellen: https://www.google.com/url?sa=i&url=https%3A%2F%2Fchlebiwino.eu%2Fchmielna-gdansk-restauracja%2F&psig=AOvVaw3aVEe-C_Hhx3ocPJpKwhfK&ust=1717700122053000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMiwl8qRxYYDFQAAAAAdAAAAABAE <br><br> https://www.google.com/url?sa=i&url=https%3A%2F%2Fobywatelpolski.com%2Flodziarnia%2Fgdansk%2Flody-tradycyjne-kwasniak-1954%2F&psig=AOvVaw3e8xPSqBND6qWTsYbGaFHQ&ust=1717700836344000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKDJh6CUxYYDFQAAAAAdAAAAABBD <br> <br> https://www.google.com/url?sa=i&url=https%3A%2F%2Fobywatelpolski.com%2Flodziarnia%2Fgdansk%2Flodziarnia-znane-smaki%2F&psig=AOvVaw0RTxjAd340g4qlVLls7Yzd&ust=1717701190090000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIiYk8mVxYYDFQAAAAAdAAAAABAI <br><br> https://www.google.com/url?sa=i&url=https%3A%2F%2Frestauracjakos.pl%2Frestauracja-kos%2F&psig=AOvVaw39t-XXRKHcEGeeEMPAFn7v&ust=1717701236170000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNDkgOCVxYYDFQAAAAAdAAAAABAE <br><br> https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tripadvisor.com.sg%2FLocationPhotoDirectLink-g274725-d2170149-i123652949-Restauracja_Swojski_Smak-Gdansk_Pomerania_Province_Northern_Poland.html&psig=AOvVaw2oiUYbSK2e93MAb5T4eTwm&ust=1717701315559000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKCt84eWxYYDFQAAAAAdAAAAABAJ",
+                zdjecieAlt: "Beschreibung des Fotos"
+            }
+        };
+
+        function zmienJezyk(lang) {
+            localStorage.setItem('lang', lang);
+            ustawJezyk(lang);
+        }
+
+        function ustawJezyk(lang) {
+            const data = tresci[lang];
+            document.getElementById('tytul').textContent = data.tytul;
+            document.getElementById('tresc').innerHTML = data.tresc; // użycie innerHTML do interpretacji znacznika <strong>
+            document.getElementById('zdjecie').alt = data.zdjecieAlt;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const lang = localStorage.getItem('lang') || 'pl';
+            ustawJezyk(lang);
+        });
+    </script>
+</body>
+</html>
